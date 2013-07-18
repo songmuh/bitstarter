@@ -2,6 +2,7 @@ var express = require('express');
 var fs = require('fs');
 
 var app = express.createServer(express.logger());
+app.use(express.static(__dirname + '/images'));
 
 app.get('/', function(request, response) {
   var buffer = fs.readFileSync("./index.html");
